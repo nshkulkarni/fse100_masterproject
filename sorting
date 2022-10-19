@@ -1,0 +1,107 @@
+const circlePoints = [];
+let draggedCirclePoints = null;
+
+const circlePoints2 = [];
+let draggedCirclePoints2 = null;
+
+const numCirclePoints = 4;
+const dragRadius = 20;
+
+const numCirclePoints2 = 4;
+const dragRadius2 = 20;
+
+function setup() {
+  createCanvas(400, 400);
+  strokeWeight(2);
+  
+    for(let i = 0; i < numCirclePoints; i++)
+    {
+      circlePoints.push(createVector(random(width), random(height)));
+    }
+  
+  for(let i = 0; i < numCirclePoints2; i++)
+    {
+    circlePoints2.push(createVector(random(width), random(height)));
+    }
+}
+
+function draw() {
+  background(220);
+  fill(255, 0, 0);
+  
+  stroke(20);
+  fill('teal');
+  rect(0, 20, 100, 360);
+
+  stroke(20);
+  fill('orange');
+  rect(300, 20, 100, 360);
+  for(let p of circlePoints)
+    {
+      stroke('white');
+      fill('green');
+      circle(p.x, p.y, dragRadius * 2);
+    }
+  
+  for(let p of circlePoints2)
+    {
+      stroke('white');
+      fill('yellow');
+      circle(p.x, p.y, dragRadius2 *2);
+    }
+}
+
+function mousePressed()
+{
+  for(let i = circlePoints.length - 1; i >= 0; i--)
+    {
+      if(mouseInCircle(circlePoints[i], dragRadius))
+        {
+          draggedCirclePoints = circlePoints.splice(i, 1);
+          draggedCirclePoints.x = mouseX;
+          draggedCirclePoints.y = mouseY;
+          circlePoints.push(draggedCirclePoints);
+          break;
+        }
+    }
+  
+    for(let i = circlePoints2.length - 1; i >= 0; i--)
+    {
+      if(mouseInCircle2(circlePoints2[i], dragRadius2))
+        {
+          draggedCirclePoints2 = circlePoints2.splice(i, 1);
+          draggedCirclePoints2.x = mouseX;
+          draggedCirclePoints2.y = mouseY;
+          circlePoints2.push(draggedCirclePoints2);
+          break;
+        }
+    }
+}
+
+function mouseDragged()
+{
+  if(draggedCirclePoints)
+    {
+      draggedCirclePoints.x = mouseX;
+      draggedCirclePoints.y = mouseY;
+    }
+  
+  if(draggedCirclePoints2)
+    {
+      draggedCirclePoints2.x = mouseX;
+      draggedCirclePoints2.y = mouseY;
+    }
+}
+
+function mouseInCircle(pos, radius)
+{
+  return dist(mouseX, mouseY, pos.x, pos.y) < radius
+}
+
+function mouseInCircle2(pos, radius)
+{
+  return dist(mouseX, mouseY, pos.x, pos.y) < radius
+}
+
+
+

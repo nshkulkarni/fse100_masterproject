@@ -1,0 +1,30 @@
+//variables
+var radius = 10;
+var diameter = radius * 2;
+var score = 0;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  
+    //create circles
+    stroke('white');
+    fill('green');
+    circle1 = circle(200, 200, diameter);
+    circle2 = circle(140, 300, diameter);
+    circle3 = circle(300, 126, diameter);
+    circle4 = circle(98, 220, diameter);
+    circle3 = circle(280, 100, diameter);
+    circle3 = circle(188, 60, diameter);
+  
+    stroke('teal');
+    fill('teal');
+    text("Score: " + score, 10, 20);
+}
+function mouseClicked()
+{
+  score+=1;
+}

@@ -120,7 +120,7 @@ noStroke();
   	endMsg = "Try Again";
     c = 'red'
   }
-  if(mouseX > 120 && mouseX < 370 && mouseY > 160 && mouseY < 200) {
+  if(mouseX > 120 && mouseX < 270 && mouseY > 160 && mouseY < 200) {
   	ready = 0;
   	endMsg = "Try Again";
     c = 'red'

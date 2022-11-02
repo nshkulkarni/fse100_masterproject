@@ -11,7 +11,6 @@ function setup() {
   frameRate(30);
   textSize(20);
   text("Trace the given shape", width/3.5, height-325);
-  text("Score: ", width/50, height-370);
   largeCircle = circle(ballx, bally, ballSize*1.2);
   smallCircle = circle(ballx, bally, ballSize);
   

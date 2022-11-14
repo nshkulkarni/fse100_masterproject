@@ -59,7 +59,7 @@ noStroke();
   }
   if(ready == 1) {
     strokeWeight(2);
-    stroke('rgb(250,158,243)');
+    stroke(165, 105, 189);
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 //winner winner

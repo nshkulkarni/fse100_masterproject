@@ -10,6 +10,8 @@ var endBox;
 
 function setup() {
   createCanvas(400, 400);
+  let c = color(215,189,226);
+  background(c);
   frameRate(30);
   textSize(20);
   text("Trace the given shape", width/3.5, height-325);
@@ -17,6 +19,7 @@ function setup() {
   text("Start", 160, 105);
   text("End",213,105);
   largeCircle = circle(ballx, bally, ballSize*1.2);
+  fill(c);
   smallCircle = circle(ballx, bally, ballSize);
   fill("green");
   startBox = rect(193, 95, 5, 30);
@@ -48,4 +51,3 @@ function draw() {
       }
   }
 }
- 

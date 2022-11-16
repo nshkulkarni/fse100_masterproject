@@ -76,7 +76,7 @@ function gotolink1() {
 }
 
 function gotolink2() {
-  window.open('https://editor.p5js.org/nkulka13/sketches/JMwR8xjQr');
+  window.open('https://editor.p5js.org/nkulka13/sketches/zdjAGq2z8');
 }
 
 function gotolink3() {
